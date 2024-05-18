@@ -16,8 +16,9 @@ export function SelectCategory() {
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
     undefined
   );
+
   return (
-    <div className="grid grid-cols-4 gap-8 mt-10 w-3/5 mx-auto mb-36 ">
+    <div className="mt-10 w-3/5 mx-auto mb-36 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
       <input
         type="hidden"
         name="categoryName"
@@ -32,15 +33,17 @@ export function SelectCategory() {
               }
               onClick={() => setSelectedCategory(item.name)}
             >
-              <CardHeader>
+              <CardHeader className="flex flex-col items-center justify-center sm:flex-row">
                 <Image
                   src={item.imageUrl}
                   alt={item.name}
                   height={32}
                   width={32}
-                  className="w-8 h-8 dark:invert"
+                  className="w-8 h-8 dark:invert sm:block hidden"
                 />
-                <h3 className="font-medium">{item.title}</h3>
+                <h3 className="font-medium text-center sm:text-left mt-2 sm:mt-0 sm:ml-2">
+                  {item.title}
+                </h3>
               </CardHeader>
             </Card>
           </div>

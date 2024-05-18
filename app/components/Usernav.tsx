@@ -45,42 +45,42 @@ async function Usernav() {
           {user ? (
             <>
               {" "}
-              <DropdownMenuItem>
-                <form action={createHomewithId} className="w-full text-start">
-                  <Button className="text-start w-full" type="submit">
-                    Rent your home
-                  </Button>
-                </form>
-              </DropdownMenuItem>
+              <form action={createHomewithId} className="w-full text-start">
+                <Button className="text-start w-full" type="submit">
+                  <DropdownMenuItem>Rent your home</DropdownMenuItem>
+                </Button>
+              </form>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <Link href="/home/my-homes">My Listings</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href="/home/favorites">My Favorites</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href="/home/reservations">My Reservations</Link>
-              </DropdownMenuItem>
+              <Link href="/home/my-homes">
+                <DropdownMenuItem>My Listings </DropdownMenuItem>
+              </Link>
+              <Link href="/home/favorites">
+                <DropdownMenuItem>My Favorites</DropdownMenuItem>
+              </Link>
+              <Link href="/home/reservations">
+                <DropdownMenuItem>My Reservations</DropdownMenuItem>
+              </Link>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <LogoutLink className="flex justify-between items-center">
+              <LogoutLink className="flex justify-between items-center">
+                <DropdownMenuItem>
                   <span className="">Logout</span>
                   <span className="ml-40">
                     <DoorClosed />
                   </span>
-                </LogoutLink>
-              </DropdownMenuItem>
+                </DropdownMenuItem>
+              </LogoutLink>
             </>
           ) : (
             <>
               {" "}
-              <DropdownMenuItem>
-                <RegisterLink>Register</RegisterLink>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <LoginLink>Login</LoginLink>
-              </DropdownMenuItem>
+              <RegisterLink>
+                {" "}
+                <DropdownMenuItem>Register </DropdownMenuItem>
+              </RegisterLink>
+              <LoginLink>
+                {" "}
+                <DropdownMenuItem>Login </DropdownMenuItem>
+              </LoginLink>
             </>
           )}
         </DropdownMenuContent>

@@ -57,7 +57,7 @@ export default async function HomeRoute({
   const country = getCountryByValue(data?.country as string);
 
   return (
-    <div className="w-[75%] mt-10 mx-auto mb-12">
+    <div className="w-[75%]  mt-10 mx-auto mb-12">
       <h2 className="font-medium text-2xl mb-5">{data?.title}</h2>
       <div className="relative h-[550px]">
         <Image
